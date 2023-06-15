@@ -22,6 +22,21 @@ function InitFilesRanksBrd() {
         }
     }
 }
+
+function InitHashKeys(){
+    var index = 0;
+
+    for(index = 0;index < 14*120; ++index){
+        PieceKeys[index] = RAND_32();
+    }
+
+    SideKey = RAND_32();
+
+    for(index=0;index<16;++index){
+        CastleKeys[index] = RAND_32();
+    }
+}
+
 function init() {
     InitFilesRanksBrd();
     console.log("init() called");
