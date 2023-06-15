@@ -35,8 +35,8 @@ function GeneratePosKey(){
         finalKey ^= PieceKeys[GameBoard.enpas];
     }
 
-    finalKey ^= CastleKeys][GameBoard.castlePerm];
-    
+    finalKey ^= CastleKeys[GameBoard.castlePerm];
+
     return finalKey;
 }
  
