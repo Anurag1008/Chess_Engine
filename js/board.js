@@ -16,6 +16,10 @@ GameBoard.pceNum = new Array(13); //index by piece
 GameBoard.pList = new Array(14*10);
 GameBoard.posKey = 0;
 
+GameBoard.moveList = new Array(MAXDEPTH * MAXPOSITIONMOVES);
+GameBoard.maveScores = new Array(MAXDEPTH * MAXPOSITIONMOVES);
+GameBoard.moveListStart = new Array(MAXDEPTH);
+
 function GeneratePosKey(){
     var sq = 0;
     var finalKey = 0;
@@ -38,5 +42,37 @@ function GeneratePosKey(){
     finalKey ^= CastleKeys[GameBoard.castlePerm];
 
     return finalKey;
+}
+
+function ResetBoard(){
+    var index = 0;
+    for(index=0;index<BRD_SQ_NUM;index++){
+        GameBoard.pieces[index] = SQUARES.OFFBOARD;
+    }
+    for(index=0;index< 64;++index){
+        GameBoard.pieces[Sq120(index)]=PIECES.EMPTY;
+    }
+    for(index=0;index<14*120;++index){
+        GameBoard.pList[index] = PIECES.EMPTY;
+    }
+    for(index=0;index<2;++index){
+        GameBoard.material[index]=0;
+    }
+    for(index=0;index<13;index++){
+        GameBoard.pceNum[index]=0;
+    }
+    GameBoard.side = 0;
+    GameBoard.enpas = SQUARES.NO_SQ;
+    GameBoard.fiftyMove = 0;
+    GameBoard.ply = 0;
+    GameBoard.hisPly = 0;
+    GameBoard.castlePerm = 0;
+    GameBoard.posKey = 0;
+    GameBoard.moveListStart[GameBoard.ply] = 0;
+}
+
+function ParsenFen(fen){
+    ResetBoard();
+
 }
  
