@@ -26,6 +26,13 @@ var MAXDEPTH = 64;
 var FilesBrd = new Array(BRD_SQ_NUM);
 var RanksBrd = new Array(BRD_SQ_NUM);
 
+var START_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+
+var PceChar = ".PNBRQKpnbrqk";
+var SideChar = "wb-";
+var RankChar = "12345678";
+var FileChar = "abcdefgh";
+
 //f = files representing columns in board 
 //r = ranks representing rows in board
 //FR2SQ provide index between chess baord 8X8 from  21 to 98 index
