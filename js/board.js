@@ -88,7 +88,7 @@ function UpdateListsMaterial(){
     for (index = 0; index < 13; index++) {
         GameBoard.pceNum[index] = 0;
     }
-    
+
     for(index = 0;index<64;++index){
         sq = Sq120(index);
         piece = GameBoard.pieces[sq];
